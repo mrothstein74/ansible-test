@@ -20,22 +20,19 @@ jobs:
           name: install collection
           command: ansible-galaxy collection install wojciechstechura.test_collection
       - run:
-          name: verify collection
-          command: ansible-galaxy collection verify wojciechstechura.test_collection
-      - run:
           name: list current container images
           command: ansible-test integration --help
-          working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
+          working_directory: ~/.ansible/collections/ansible_collections/wojciechstechura/test_collection
       - run:
           name: run integration ping test
           command: ansible-test integration ping --docker default
-          working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
+          working_directory: ~/.ansible/collections/ansible_collections/wojciechstechura/test_collection
       - run:
           name: run integration list available targets
           command: ansible-test integration --list-targets
-          working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
+          working_directory: ~/.ansible/collections/ansible_collections/wojciechstechura/test_collection
       - run:
           name: run integration lininfile test
           command: ansible-test integration lineinfile -vvv
-          working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
+          working_directory: ~/.ansible/collections/ansible_collections/wojciechstechura/test_collection
 
