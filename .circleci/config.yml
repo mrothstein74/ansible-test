@@ -17,8 +17,8 @@ jobs:
             sudo apt update
             sudo apt install python3-argcomplete
       - run:
-          name: run ansible test help
-          command: ansible-test --help
+          name: install collection
+          command: ansible-galaxy collection install crivetimihai.server
       - run:
           name: list current container images
           command: ansible-test integration --help
