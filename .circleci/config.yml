@@ -17,14 +17,14 @@ jobs:
             sudo apt update
             sudo apt install python3-argcomplete
       - run:
-          name: run integration list available targets
-          command: ansible-test integration --list-targets
-      - run:
           name: list current container images
           command: ansible-test integration --help
       - run:
           name: run integration ping test
           command: ansible-test integration ping --docker ubuntu1804
+      - run:
+          name: run integration list available targets
+          command: ansible-test integration --list-targets
       - run:
           name: run integration lininfile test
           command: ansible-test integration lineinfile -vvv
