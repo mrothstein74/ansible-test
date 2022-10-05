@@ -1,0 +1,14 @@
+version: 2.1
+
+workflows:
+  build-and-unittest:
+    jobs:
+      - build
+
+jobs:
+  build:
+    docker:
+      - image: cimg/deploy:2022.09.1
+    steps:
+      - checkout
+      - run: echo "Do things"
