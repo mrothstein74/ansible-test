@@ -25,7 +25,7 @@ jobs:
           working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
       - run:
           name: run integration ping test
-          command: ansible-test integration ping --docker ubuntu1804
+          command: ansible-test integration ping --docker default
           working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
       - run:
           name: run integration list available targets
