@@ -26,19 +26,15 @@ jobs:
             ls -R
           working_directory: ~/.ansible/collections/ansible_collections/community/general
       - run:
-          name: list current container images
-          command: ansible-test integration --help
-          working_directory: ~/.ansible/collections/ansible_collections/community/general
-      - run:
-          name: run integration ping test
-          command: ansible-test integration ping --docker default
-          working_directory: ~/.ansible/collections/ansible_collections/community/general
-      - run:
           name: run integration list available targets
           command: ansible-test integration --list-targets
           working_directory: ~/.ansible/collections/ansible_collections/community/general
       - run:
-          name: run integration lininfile test
-          command: ansible-test integration lineinfile -vvv
+          name: run integration npm test
+          command: ansible-test integration npm --docker default
+          working_directory: ~/.ansible/collections/ansible_collections/community/general
+      - run:
+          name: run integration npm verbose test
+          command: ansible-test integration npm -vvv
           working_directory: ~/.ansible/collections/ansible_collections/community/general
 
