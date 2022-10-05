@@ -26,6 +26,10 @@ jobs:
             ls -R
           working_directory: ~/.ansible/collections/ansible_collections/community/general
       - run:
+          name: run sanity tests
+          command: ansible-test sanity -v
+          working_directory: ~/.ansible/collections/ansible_collections/community/general
+      - run:
           name: run integration list available targets
           command: ansible-test integration --list-targets
           working_directory: ~/.ansible/collections/ansible_collections/community/general
