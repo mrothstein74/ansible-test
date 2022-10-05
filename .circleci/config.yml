@@ -11,4 +11,6 @@ jobs:
       - image: cimg/deploy:2022.09.1
     steps:
       - checkout
-      - run: echo "Do things"
+      - run: |
+          sudo apt update
+          sudo apt install python-argcomplete
