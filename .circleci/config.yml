@@ -20,6 +20,10 @@ jobs:
           name: install collection
           command: ansible-galaxy collection install wojciechstechura.test_collection
       - run:
+          name: list dirs
+          command: ls -al
+          working_directory: ~/.ansible/collections/ansible_collections/wojciechstechura/test_collection
+      - run:
           name: list current container images
           command: ansible-test integration --help
           working_directory: ~/.ansible/collections/ansible_collections/wojciechstechura/test_collection
