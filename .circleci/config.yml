@@ -22,13 +22,17 @@ jobs:
       - run:
           name: list current container images
           command: ansible-test integration --help
+          working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
       - run:
           name: run integration ping test
           command: ansible-test integration ping --docker ubuntu1804
+          working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
       - run:
           name: run integration list available targets
           command: ansible-test integration --list-targets
+          working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
       - run:
           name: run integration lininfile test
           command: ansible-test integration lineinfile -vvv
+          working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
 
