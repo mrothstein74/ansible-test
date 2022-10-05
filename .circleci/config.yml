@@ -18,7 +18,7 @@ jobs:
             sudo apt install python3-argcomplete
       - run:
           name: install collection
-          command: ansible-galaxy collection install wojciechstechura.test_collection
+          command: ansible-galaxy collection install community.general
       - run:
           name: list dirs
           command: |
