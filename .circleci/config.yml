@@ -30,10 +30,6 @@ jobs:
           command: ansible-test integration --list-targets
           working_directory: ~/.ansible/collections/ansible_collections/community/general
       - run:
-          name: run integration filesize test
-          command: ansible-test integration filesize --docker ubuntu2004
-          working_directory: ~/.ansible/collections/ansible_collections/community/general
-      - run:
           name: run integration filesize verbose test
           command: ansible-test integration filesize -vvv
           working_directory: ~/.ansible/collections/ansible_collections/community/general
