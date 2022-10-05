@@ -18,10 +18,10 @@ jobs:
             sudo apt install python3-argcomplete
       - run:
           name: install collection
-          command: ansible-galaxy collection install crivetimihai.server
+          command: ansible-galaxy collection install wojciechstechura.test_collection
       - run:
           name: verify collection
-          command: ansible-galaxy collection verify crivetimihai.server
+          command: ansible-galaxy collection verify wojciechstechura.test_collection
       - run:
           name: list current container images
           command: ansible-test integration --help
