@@ -20,6 +20,9 @@ jobs:
           name: install collection
           command: ansible-galaxy collection install crivetimihai.server
       - run:
+          name: verify collection
+          command: ansible-galaxy collection verify crivetimihai.server
+      - run:
           name: list current container images
           command: ansible-test integration --help
           working_directory: ~/.ansible/collections/ansible_collections/crivetimihai/server
