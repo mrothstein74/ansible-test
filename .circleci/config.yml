@@ -30,11 +30,11 @@ jobs:
           command: ansible-test integration --list-targets
           working_directory: ~/.ansible/collections/ansible_collections/community/general
       - run:
-          name: run integration npm test
-          command: ansible-test integration npm --docker default
+          name: run integration filesize test
+          command: ansible-test integration filesize --docker default
           working_directory: ~/.ansible/collections/ansible_collections/community/general
       - run:
-          name: run integration npm verbose test
-          command: ansible-test integration npm -vvv
+          name: run integration filesize verbose test
+          command: ansible-test integration filesize -vvv
           working_directory: ~/.ansible/collections/ansible_collections/community/general
 
