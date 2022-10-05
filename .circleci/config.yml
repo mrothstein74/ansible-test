@@ -11,7 +11,17 @@ jobs:
       - image: cimg/deploy:2022.09.1
     steps:
       - checkout
-      - run: |
-          sudo apt update
-          sudo apt install python3-argcomplete
-          ansible-test integration shippable/ --docker fedora34
+      - run:
+          name: install python3-argcomplete dependency 
+          command: |
+            sudo apt update
+            sudo apt install python3-argcomplete
+      - run:
+          name: run integration ping test
+          command: ansible-test integration ping
+      - run:
+          name: run integration lininfile test
+          command: ansible-test integration lineinfile -vvv
+      - run:
+          name: run integration list available targets
+          command: ansible-test integration --list-targets
